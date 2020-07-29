@@ -1,0 +1,59 @@
+{
+  "name": "arquivos",
+  "private": true,
+  "version": "0.0.1",
+  "description": "API de arquivos da São Paulo Urbanismo",
+  "bugs": "https://github.com/SPURB/arquivos/issues",
+  "main": "dist/index.js",
+  "engines": {
+    "node": "~12.18.2",
+    "npm": ">=6.11.2"
+  },
+  "scripts": {
+    "prestart": "npm run -s build",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js",
+    "prebuild": "babel-node ./prebuild",
+    "build": "npm run prebuild && babel --out-dir ./dist ./src --minified --compact --source-maps false",
+    "lint": "prettier-standard src/{*,/**/*}.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.*(js|json)": [
+      "npm run lint",
+      "git add --all"
+    ]
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "babel-register": "^6.26.0",
+    "dotenv": "^8.2.0",
+    "husky": "^4.2.3",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.0.8",
+    "mkdirp": "^1.0.3",
+    "nodemon": "^2.0.2",
+    "prettier-standard": "^16.2.1",
+    "rimraf": "^3.0.2",
+    "supertest": "^4.0.2"
+  }
+}
