@@ -1,9 +1,7 @@
-import { config } from 'dotenv'
+import config from './config'
 import { app, basePath } from './app'
 
-config()
-
-const { PORT = 5000, HOST = 'localhost', PROTOCOL = 'http' } = process.env
+const { PORT, HOST, PROTOCOL } = config
 app.listen(PORT, () =>
   console.log(`Serviço disponível em ${PROTOCOL}://${HOST}:${PORT}${basePath}`)
 )
