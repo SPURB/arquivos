@@ -7,12 +7,36 @@
 	"item": [
 		{
 			"name": "http://localhost:5000/arquivos/api",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "123abc456!@#789",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"url\":\"qweqweqwe\"\r\n}",
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "arquivo",
+							"type": "file",
+							"src": "/C:/Users/Windows/Desktop/500x500.png"
+						}
+					],
 					"options": {
 						"raw": {
 							"language": "json"
@@ -30,7 +54,8 @@
 						"arquivos",
 						"api"
 					]
-				}
+				},
+				"description": "Para testar posts alterar tipo de body para `form-data` e selecionar algum arquivo local"
 			},
 			"response": []
 		},
