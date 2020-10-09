@@ -1,6 +1,5 @@
 import config from './config'
 import express from 'express'
-import path from 'path'
 import bodyParser from 'body-parser'
 import routes from './routes'
 import cors from 'cors'
@@ -12,15 +11,14 @@ connect(config.MONGODB_URI, {
   useUnifiedTopology: true
 })
 
-const { name } = require('../package.json')
-const basePath = `/${name}/api/`
+const basePath = `/api/`
 
 const app = express()
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, '../public')))
+app.use('/api/public', express.static('public'))
 
 app.use(middlewares.addVersion)
 

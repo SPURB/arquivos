@@ -57,7 +57,6 @@ route.post(
   middlewares.isAuth,
   upload.single('arquivo'),
   (req, res, next) => {
-    console.log(req.file)
     const createdAt = new Date()
     const arquivo = new Arquivo({
       _id: new Types.ObjectId(),
