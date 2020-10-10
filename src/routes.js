@@ -60,7 +60,7 @@ route.post(
     const createdAt = new Date()
     const arquivo = new Arquivo({
       _id: new Types.ObjectId(),
-      metadados: req.body.metadados,
+      metadados: req.body,
       updateAt: createdAt,
       createdAt,
       file: req.file

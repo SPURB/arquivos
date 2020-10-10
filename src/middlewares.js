@@ -1,6 +1,5 @@
 import config from './config'
 const { version } = require('../package.json')
-import multer from 'multer'
 
 export default {
   /*
