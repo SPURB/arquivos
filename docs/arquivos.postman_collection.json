@@ -7,9 +7,25 @@
 	"item": [
 		{
 			"name": "http://localhost:5000/arquivos/api",
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {}
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api"
+					]
+				}
 			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/arquivos/api",
 			"request": {
 				"auth": {
 					"type": "apikey",
@@ -34,45 +50,28 @@
 						{
 							"key": "arquivo",
 							"type": "file",
-							"src": "/C:/Users/Windows/Desktop/500x500.png"
+							"src": "/C:/wamp64/www/arquivos/public/500x500.png"
+						},
+						{
+							"key": "olar",
+							"value": "alor",
+							"type": "text"
+						},
+						{
+							"key": "foo",
+							"value": "bar",
+							"type": "text"
 						}
-					],
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/arquivos/api",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"arquivos",
-						"api"
 					]
 				},
-				"description": "Para testar posts alterar tipo de body para `form-data` e selecionar algum arquivo local"
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:5000/arquivos/api",
-			"request": {
-				"method": "GET",
-				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/arquivos/api",
+					"raw": "http://localhost:5000/api",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						"arquivos",
 						"api"
 					]
 				}
