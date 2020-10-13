@@ -11,7 +11,7 @@ connect(config.MONGODB_URI, {
   useUnifiedTopology: true
 })
 
-const basePath = `/api/`
+const basePath = `/arquivos/api/`
 
 const app = express()
 
